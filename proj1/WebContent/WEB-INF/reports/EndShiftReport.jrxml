@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EndShiftReport" language="groovy" pageWidth="214" pageHeight="927" whenNoDataType="AllSectionsNoDetail" columnWidth="174" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a91e0003-adf0-4dce-befb-90d33b0ccd98">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="155"/>
+	<parameter name="stationName" class="java.lang.String"/>
+	<parameter name="stationPhNo" class="java.lang.String"/>
+	<parameter name="stationAddress" class="java.lang.String"/>
+	<parameter name="customerLogo" class="java.lang.String"/>
+	<parameter name="shiftId" class="java.lang.String"/>
+	<parameter name="counterName" class="java.lang.String"/>
+	<parameter name="cashierName" class="java.lang.String"/>
+	<parameter name="startTime" class="java.lang.String"/>
+	<parameter name="endTime" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\Working\\32_bits\\PSH_POS_Push_v001_Ws\\PSH_POS_v001\\WebContent\\WEB-INF\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="productType" class="java.lang.String"/>
+	<field name="noOfSales" class="java.lang.Long"/>
+	<field name="noOfVolume" class="java.lang.Double"/>
+	<field name="amount" class="java.lang.Double"/>
+	<field name="otherList" class="java.util.List"/>
+	<field name="noOfOtherSales" class="java.lang.Integer"/>
+	<field name="noOfOtherVolume" class="java.lang.Double"/>
+	<field name="otherAmount" class="java.lang.Double"/>
+	<field name="creditList" class="java.util.List"/>
+	<field name="noOfCreditSales" class="java.lang.Integer"/>
+	<field name="noOfCreditVolume" class="java.lang.Double"/>
+	<field name="creditAmount" class="java.lang.Double"/>
+	<field name="redeemList" class="java.util.List"/>
+	<field name="noOfRedeemSales" class="java.lang.Integer"/>
+	<field name="redeemAmount" class="java.lang.Double"/>
+	<field name="noOfRedeemVolume" class="java.lang.Double"/>
+	<variable name="totalAmount" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<variable name="totalSales" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{noOfSales}]]></variableExpression>
+	</variable>
+	<variable name="totalVolumes" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{noOfVolume}]]></variableExpression>
+	</variable>
+	<variable name="totalOtherSale" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{noOfOtherSales}]]></variableExpression>
+	</variable>
+	<variable name="totalOtherVolume" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{noOfOtherVolume}]]></variableExpression>
+	</variable>
+	<variable name="totalOtherAmount" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{otherAmount}]]></variableExpression>
+	</variable>
+	<variable name="totalCreditSale" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{noOfCreditSales}]]></variableExpression>
+	</variable>
+	<variable name="totalCreditVolume" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{noOfCreditVolume}]]></variableExpression>
+	</variable>
+	<variable name="totalCreditAmount" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{creditAmount}]]></variableExpression>
+	</variable>
+	<variable name="variable1" class="java.lang.String"/>
+	<variable name="totalRedeemSale" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{noOfRedeemSales}]]></variableExpression>
+	</variable>
+	<variable name="totalRedeemVolume" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{noOfRedeemVolume}]]></variableExpression>
+	</variable>
+	<variable name="totalRedeemAmount" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{redeemAmount}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="53" y="2" width="115" height="20" uuid="9fcdd666-6b57-41cd-8343-6e6fc879ee9a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{stationName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="53" y="22" width="115" height="17" uuid="e098804a-a259-4136-8a54-941e828eb122"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{stationPhNo}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="8" y="1" width="45" height="40" uuid="ac2b4646-ce3b-4cfd-b551-d5af042ab1e1"/>
+				<imageExpression><![CDATA[$P{customerLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="133">
+			<staticText>
+				<reportElement x="113" y="107" width="55" height="25" uuid="99cb8284-bfa6-4c0c-b4a5-cf177e5eda7c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[Cash Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="38" y="107" width="32" height="25" uuid="a1ac06f2-00ab-421f-8675-2113407ef3f3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[Sales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="107" width="34" height="25" uuid="4eb14b4c-808b-4ce5-8f4b-02233989c06c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[Product]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="0" width="51" height="15" uuid="f5789ae9-77e6-4e2a-b10d-a13053d7bf48"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[Shift Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="15" width="51" height="15" uuid="fb0f0fe2-7b5c-4749-a820-9d798133ef4e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[Counter Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="30" width="51" height="15" uuid="23a41b38-821e-498c-becb-cd00655a8cfa"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[Cashier Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="45" width="51" height="15" uuid="3fa9f83f-5834-4bbc-80a6-e746f9e82d3e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[Start Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="60" width="51" height="15" uuid="96ff191a-01f1-4939-b5e7-fc92dc0355a6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[End Time]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="68" y="0" width="94" height="15" uuid="80a3b01d-59c6-4d9a-bca2-991487a93c06"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shiftId}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="68" y="15" width="94" height="15" uuid="45fd7c5b-1876-4544-ac0a-8cb69e482d99"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{counterName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="68" y="30" width="94" height="15" isPrintWhenDetailOverflows="true" uuid="552893a8-cce0-4d00-accc-b831221e9885"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cashierName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="68" y="45" width="94" height="15" uuid="4f8d06e8-1a23-4b73-bcef-db83e67f7774"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{startTime}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="68" y="60" width="94" height="15" isPrintWhenDetailOverflows="true" uuid="bddde391-0c90-446d-8db9-4c97ea956da2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{endTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="72" y="107" width="40" height="25" uuid="dbf600b3-a3af-4190-bfdb-992b4e658def"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[Cash Volumes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="90" width="162" height="17" uuid="36f64afe-53fd-4fe6-8a73-d3eae89c1e9d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Cash Sale Summary]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="5" y="0" width="34" height="15" isPrintWhenDetailOverflows="true" uuid="e54d69e6-458c-4ff6-a8ca-e4c1692bc25c"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productType}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="39" y="0" width="32" height="15" isPrintWhenDetailOverflows="true" uuid="5cce6c90-cacb-469f-bbe3-e6e3c833bf8b"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noOfSales}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.000;-#,##0.000" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="73" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="77c704fa-e2d8-4cf6-b385-e7dc082007bc"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noOfVolume}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="114" y="0" width="55" height="15" isPrintWhenDetailOverflows="true" uuid="08b1693f-55bb-4d9c-9c80-cc4e4fe511cd"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="469">
+			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="116" y="444" width="55" height="15" uuid="75eb7947-bb38-4003-87fd-cb556db82a88"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalAmount}+$V{totalOtherAmount}+$V{totalCreditAmount}+$V{totalRedeemAmount}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="39" y="444" width="34" height="15" uuid="72b3e9a1-1ca6-48bf-8b91-9f362c5a56e0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalSales}+$V{totalOtherSale}+$V{totalCreditSale}+$V{totalRedeemSale}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.000;-#,##0.000" isBlankWhenNull="true">
+				<reportElement x="75" y="444" width="40" height="15" uuid="dcf0f479-5698-4173-87a6-8904aa072fea"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalVolumes}+$V{totalOtherVolume}+$V{totalCreditVolume}+$V{totalRedeemVolume}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="170" width="175" height="125" uuid="329055fd-c7dd-487b-b82e-b68e6a031bb5"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{otherList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "EndShiftReport_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="3" y="444" width="35" height="15" uuid="45cc3cc2-c41e-442e-9d54-992fa58f6dc5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField pattern="#,##0.000;-#,##0.000" isBlankWhenNull="true">
+				<reportElement x="72" y="4" width="40" height="15" uuid="7aa045b1-2d4a-4486-839a-8b622bd41111"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalVolumes}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="113" y="4" width="55" height="15" uuid="94bded50-6c9f-4dfe-a6e4-10e4e08b8ca7"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalAmount}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="36" y="4" width="34" height="15" uuid="0c8e9f83-ca39-4b6e-ab52-a965e765b9a9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalSales}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="6" y="21" width="160" height="1" uuid="aaa6f6f0-c1e4-4555-94bd-06b5dd02a626"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="5" y="2" width="160" height="1" uuid="9f36736b-a2dd-461a-aa47-e1f34a2e4572"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="11" y="443" width="160" height="1" uuid="4bbffbe7-f3f8-4421-8b9a-d8a586d0cd64"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="11" y="461" width="160" height="1" uuid="158bd38a-3ab4-4afa-bc5a-31df983e1463"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<subreport>
+				<reportElement x="3" y="33" width="168" height="125" uuid="e336adde-e4b5-4cb4-8e53-57061afbfd6a"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{creditList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "EndShiftReport_creditListRpt.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="0" y="311" width="175" height="125" uuid="e8f84fc2-8b10-49a0-908f-9d20f3bf85c3"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{redeemList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "EndShiftReport_subreport2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

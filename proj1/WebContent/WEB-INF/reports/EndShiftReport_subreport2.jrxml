@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EndShiftReport_subreport2" language="groovy" pageWidth="213" pageHeight="144" columnWidth="213" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="65497723-c9b4-4050-9e6c-86472679f163">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="productType" class="java.lang.String"/>
+	<field name="noOfSales" class="java.lang.Long"/>
+	<field name="noOfVolume" class="java.lang.Double"/>
+	<field name="amount" class="java.lang.Double"/>
+	<variable name="totalAmount" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<variable name="totalSales" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{noOfSales}]]></variableExpression>
+	</variable>
+	<variable name="totalVolumes" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{noOfVolume}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="123" y="20" width="55" height="25" uuid="308dfc69-68f0-4288-8926-d3e7e4f0ae72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[Redeem Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="82" y="20" width="40" height="25" uuid="0d635b05-2fed-4b41-8565-4022f3ac3fe0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[Redeem Volumes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="4" width="162" height="15" uuid="9844f769-1ded-4b9f-8ce6-419b5b318d58"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Redeem Sales Summary]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="48" y="20" width="32" height="25" uuid="5fd011f1-d996-4567-8725-e5d87bf31d75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[Redeem Sales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="20" width="34" height="25" uuid="36ccd22a-1e38-4d39-a848-cfc5e1013388"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[Product]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField pattern="#,##0.000;-#,##0.000" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="82" y="0" width="40" height="15" isPrintWhenDetailOverflows="true" uuid="ba9b56ec-2d4d-42d7-a4be-cd8f12190e08"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noOfVolume}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="48" y="0" width="32" height="15" isPrintWhenDetailOverflows="true" uuid="0661e122-4976-491a-8238-1d158ede15c4"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noOfSales}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="123" y="0" width="55" height="15" isPrintWhenDetailOverflows="true" uuid="103a3710-d02c-400d-a8c3-c0433e26ec39"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="14" y="0" width="34" height="15" isPrintWhenDetailOverflows="true" uuid="f2cf3f52-6321-4fdb-ae9b-8f453b806f46"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productType}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<line>
+				<reportElement x="16" y="18" width="166" height="1" forecolor="#333333" uuid="b35b1836-3b32-45d1-a789-d2515813bcd1"/>
+			</line>
+			<textField pattern="#,##0.000;-#,##0.000" isBlankWhenNull="true">
+				<reportElement x="84" y="2" width="40" height="15" uuid="7c16e57b-adac-44d4-974a-d55a7f723c89"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalVolumes}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="16" y="1" width="166" height="1" forecolor="#333333" uuid="15381e69-ff3d-44b5-b407-d816198c362a"/>
+			</line>
+			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="125" y="2" width="55" height="15" uuid="b9b710cb-6a56-4a93-8ebc-ee46ebddc2e8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalAmount}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="48" y="2" width="34" height="15" uuid="f08be530-aeab-43fa-af7f-aef95808a93d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalSales}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
