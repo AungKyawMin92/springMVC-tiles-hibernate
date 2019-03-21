@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<definition name="baselayout" template="/template/LoginTemplate.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="Bootstrapcss" value="resources/css/bootstrap.min.css" type="string" />		
+		<put-attribute name="stylecss" value="resources/css/style.css" type="string" />
+		<put-attribute name="formStylecss" value="resources/css/formStyle.css" type="string" />
+		<put-attribute name="accorcss" value="resources/css/accordion-menu.css" type="string" />
+		<put-attribute name="jqcss" value="resources/css/jquery-ui.css" type="string" />
+
+		<put-attribute name="jqjs" value="resources/js/jquery-1.11.2.min.js" type="string" />
+		<put-attribute name="jquijs" value="resources/js/jquery-ui.js" type="string" />
+		<put-attribute name="customjs" value="resources/js/custom.js" type="string" />
+		<put-attribute name="bootminjs" value="resources/js/bootstrap.min.js" type="string" />
+		<put-attribute name="accorjs" value="resources/js/accordion-menu.js" type="string" />
+		
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/template/footer.jsp"/>
+	</definition>
+	
+	
+	<definition name="adminLayout" template="/template/AdminTemplate.jsp">
+		<put-attribute name="title" value="vvv"/>
+		<put-attribute name="Bootstrapcss" value="resources/css/bootstrap.min.css" type="string" />		
+		<put-attribute name="stylecss" value="resources/css/style.css" type="string" />
+		<put-attribute name="formStylecss" value="resources/css/formStyle.css" type="string" />
+		<put-attribute name="accorcss" value="resources/css/accordion-menu.css" type="string" />
+		<put-attribute name="jqcss" value="resources/css/jquery-ui.css" type="string" />
+
+		<put-attribute name="jqjs" value="resources/js/jquery-1.11.2.min.js" type="string" />
+		<put-attribute name="jquijs" value="resources/js/jquery-ui.js" type="string" />
+		<put-attribute name="customjs" value="resources/js/custom.js" type="string" />
+		<put-attribute name="bootminjs" value="resources/js/bootstrap.min.js" type="string" />
+		<put-attribute name="accorjs" value="resources/js/accordion-menu.js" type="string" />
+		
+		<put-attribute name="header" value="/template/header.jsp"/>
+		<put-attribute name="menu" value="/template/menu.jsp"/>
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/template/footer.jsp"/>
+	</definition>
+	
+	<definition name="welcome.tiles" extends="baselayout">		
+		<put-attribute name="body" value="/views/login.jsp"/>
+	</definition>
+	
+	<definition name="adminLogin.tiles" extends="adminLayout">		
+		<put-attribute name="body" value="/views/Home.jsp"/>
+	</definition>
+		
+	
+</tiles-definitions>

@@ -1,0 +1,11 @@
+<html lang="en">
+    <head>
+    </head>
+    <body style="font-family:arial;font-size: 16px;color:#555;">
+        <div class="wrapper" style="width: 80%;margin:0px auto;padding:0;">
+           <p> Mr.minmin testing email :D  ${desc}</p>
+        </div>
+    </body>
+</html>
+
+ 

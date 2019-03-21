@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+	<constant name="struts.custom.i18n.resources" value="displaytag"></constant>
+    <package name="default" extends="struts-default">
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+ 	  <!-- action before login -->
+ 
+  	  <!-- create agency acc while loading proj -->
+	  	  <action name="firstpage" method="insertagency" class="mm.com.proj2.action.FirstAction">
+	  	  		<result type="tiles" name="success">welcome.tiles</result>
+	  	  		<result type="tiles" name="createagency">welcome.tiles</result>
+	  	  </action>
+	  	  
+	  	  <action name="logincheck" method="chkLogin" class="mm.com.proj2.action.FirstAction">
+	  	  		<result type="tiles" name="success">adminLogin.tiles</result>
+	  	  		<result type="tiles" name="login">welcome.tiles</result>
+	  	  </action>
+    </package>
+    
+   
+</struts>

@@ -1,0 +1,67 @@
+.wrapper{
+	font-size : 12px;
+	height : 95%;
+}
+.formTable {
+	padding : 2%;
+	border-spacing: 2px 10px;
+	font-size : 13px;
+	width : 65%;
+}
+.formTable td , .loginFormTable td{
+	width : 40%;
+}
+.formTable input[type=text] ,.formTable input[type=password] , .loginFormTable input[type=text] , .loginFormTable input[type=password],
+.formTable input[type=select]{
+
+	padding-top : 10px;
+	padding-left : 10px;
+	border-spacing: 2px 10px;
+}
+tbody tr { height: 40px; }
+.formTable input[type=submit] , .loginFormTable input[type=submit] {
+	cursor : pointer;
+}
+.formTable .label {
+	padding-left : 10%;
+}
+select { width: 95% }
+
+#menuvv{
+	border-spacing: 2px 10px;
+    font-size: 13px;
+    padding: 2%;
+    width: 65%;
+}
+
+.formTableMenuRole {
+	padding : 2%;
+	border-spacing: 2px 10px;
+	font-size : 13px;
+	width : 25%;
+	height : 30% !important;
+	width : 25%;
+	overflow-y: auto;
+}
+.logInBox {
+	left: 50%;
+	margin-left: -250px;
+	margin-top: -95px;
+	position: fixed;
+	top: 50%;
+	background-color: #f5f5f5;
+}
+.loginFormTable{
+	padding-top : 10%;
+	padding-left : 10%;
+	border-spacing: 2px 10px;
+	font-size : 13px;
+	width : 95%;
+}
+ .listTable .formTable th, .listTable .formTable td {
+	width : 20%;
+	height : 30px;
+}
+ .listTable .formTable th{
+	background-color : red;
+ }

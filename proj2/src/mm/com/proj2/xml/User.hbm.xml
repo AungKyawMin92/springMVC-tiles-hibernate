@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="mm.com.proj2.entity">
+	<class name="User" table="user">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="integer" column="Id">
+			<generator class="identity" />
+		</id>
+		
+		<property name="name" column="Name" type="string"
+			not-null="true" length="255" />
+			<property name="loginName" column="LoginName" type="string"
+			not-null="true" length="255" />
+		<property name="password" column="Password" type="string"
+			not-null="true" length="255" />
+		
+		<many-to-one name="role" class="mm.com.proj2.entity.UserRole" cascade="all"></many-to-one>
+	</class>
+</hibernate-mapping>
+		
